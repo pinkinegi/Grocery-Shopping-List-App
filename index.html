@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='Grocery Shopping List App'>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Grocery Shopping List App</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+    <script src="js/angular.min.js"></script>
+    <!-- this is required for routing in angularjs -->
+    <script src="https://code.angularjs.org/1.6.5/angular-route.js"></script>
+
+
+</head>
+
+<body id="app">
+  
+  <!-- agar humko header fixed krna yhn p likh skte hr page m dkhga fixed -->
+ <!-- everything of a specific page (route) will be shown inside ng-view -->
+    <div ng-view></div>
+    <!-- hum jis bhi page p honge vo yhn p aajyga  -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
