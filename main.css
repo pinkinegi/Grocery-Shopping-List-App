@@ -211,3 +211,42 @@ input.ng-valid {
   color: white;
 
 }
+
+
+/*.right{
+  position: absolute;
+  right:130px;
+
+background: #FFF;
+box-shadow: none;
+margin: 1rem 0;
+width: 230px;
+padding: 1em;
+border-radius: .28571429rem;
+border: 1px solid #e7e7e7;
+height: 800px;
+
+}*/
+/*.map{
+  position: absolute;
+  right:200px;
+  top: 440px;
+
+background: #FFF;
+box-shadow: none;
+margin: 1rem 0;
+width: 230px;
+padding: 1em;
+border-radius: .28571429rem;
+border: 1px solid #e7e7e7;
+height: 220px;
+
+
+}
+.map p{
+  color: grey;
+
+}*/
+.done{
+  text-decoration: line-through;
+}

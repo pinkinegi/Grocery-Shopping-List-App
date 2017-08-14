@@ -1,59 +1,67 @@
-<div ng-controller="restaurantController" >
-  <!-- ng-if condition lgaata h k agr us restaurant ka name hoga tbhi dkhga vrna nhi dkhga or agr mil jaae toh jo niche likha h ye dkhao  -->
-  <div class="restaurant" ng-if="restaurant.name">
-      <div class="rest-wrapper">
-          <div class="image">
-              <img ng-src="{{restaurant.image}}" height="100" width="100">
-          </div>
-          <div class="rest-info">
-              <div class="rest-category">
-                 <small>{{restaurant.category}} </small>
+<div ngController="restaurantController">
+<div class="restaurant" ng-if="restaurant.name">
+    <div class="rest-wrapper">
+        <div class="image">
+            <img ng-src="{{restaurant.image}}" height="100" width="100">
+        </div>
+        <div class="rest-info">
+            <div class="rest-category">
+               <small>{{restaurant.category}} </small>
+            </div>
+            <div class="rest-name">
+            <strong>{{restaurant.name}}</strong>
+            </div>
+            <div>
+               <strong> {{restaurant.location}}</strong>
+            </div>
+            <div class="rest-address">
+                {{restaurant.address}}
+            </div>
+        </div>
+    </div>
+    <div class="rest-extra">
+        <div class="type">
+            <div><small>Cuisines:</small></div>
+            <div><small>Cost for Two: </small></div>
+            <div><small>Hours:</small></div>
+            <div><small>Best Dish:</small></div>
+        </div>
+        <div class="value">
+            <div>{{restaurant.cuisines}}</div>
+            <div>₹{{restaurant.cost | number}}</div>
+            <div>{{restaurant.hours}}</div>
+            <div class="bestDish" ng-if="restaurant.bestDish">
+              <span>{{restaurant.bestDish.name}} </span>
+              <div ng-click="getIngredients(restaurant.bestDish.image)" class="button">Get Ingredients</div>
+              <div ng-click="getGrocery(restaurant.bestDish.image)" class="button">Grocery List</div>
+              <div ng-if="ingredients">
+                <ol>
+                  <li ng-repeat="ingredient in ingredients">
+                    {{ingredient}}
+                  </li>
+                </ol>
               </div>
-              <div class="rest-name">
-              <strong>{{restaurant.name}}</strong>
-              </div>
-              <div>
-                 <strong> {{restaurant.location}}</strong>
-              </div>
-              <div class="rest-address">
-                  {{restaurant.address}}
-              </div>
-          </div>
-      </div>
-      <div class="rest-extra">
-          <div class="type">
-              <div><small>Cuisines:</small></div>
-              <div><small>Cost for Two: </small></div>
-              <div><small>Hours:</small></div>
-              <div ng-if="restaurant.bestDish"><small>Recommended: </small></div>
+        </div>
+    </div>
+    <div class="rating">
+        <strong>{{restaurant.vote}}</strong>
+    </div>
 
-          </div>
-          <div class="value">
-              <div>{{restaurant.cuisines}}</div>
-              <div>₹{{restaurant.cost | number}}</div>
-              <div>{{restaurant.hours}}</div>
-              <div class="bestDish" ng-if="restaurant.bestDish">
-                  <span>{{restaurant.bestDish.name}} </span>
-                  <div class="button" ng-click="getIngredients(restaurant.bestDish.image)">Get Ingredients</div>
-                </div>
-          </div>
-      </div>
-      <div class="rating">
-          <strong>{{restaurant.vote}}</strong>
-      </div>
-      <div ng-if="ingredients">
-          <ol>
-            <li ng-repeat="ingredient in ingredients">
-            {{ingredient}}
-            </li>
-          </ol>
-      </div>
-      <div class="noofvotes">
-        <small> {{restaurant.noofvotes}}</small>
-      </div>
+    </div>
+    <!-- <div ngController="groceryController"> -->
+    <div ng-if='grocery'  ng-repeat='grocery in groceries'>
+      <div  >
+      <!-- A checkbox displaying the progress -->
+      <!-- An information of a task -->
+      <label id="{{grocery}}"  ng-click="showDone($event)"  >
+        <input type='checkbox' ng-model='data.done'   />
 
-  </div>
-  <!-- agr restaurant milta toh not found vla page dkhao -->
-<div class="wrong" ng-hide="restaurant.name"> <h2>404 - Oops!!! restaurant not found  </h2> </div>
-
+        {{grocery}}
+      </label>
+      <!-- for="{{grocery}}" > -->
+        <!-- {{ingredient.grocery}} -->
+      <!-- </span> -->
+      </div>
+    </div>
+    </div>
 </div>
